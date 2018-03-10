@@ -1,3 +1,6 @@
+//Time: O(n)
+//Space: O(n)
+//Use the idea of counting sort
 class Solution {
     public int hIndex(int[] citations) {
         if (citations == null || citations.length < 1) {
