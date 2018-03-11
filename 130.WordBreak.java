@@ -1,19 +1,7 @@
 //Time: O(n^3), we are calling the api for substring that takes O(n) of time
 //Space: O(n)
 class Solution {
-    
-// public boolean wordBreak(String s, List<String> wordDict) {
-//     boolean[] dp = new boolean[s.length() + 1];
-//     dp[0] = true;
-//     Set<String> dict = new HashSet<>(wordDict);
-//     for (int i = 1; i < dp.length; i++)
-//         for (int j = 0; j < i; j++) 
-//             if (dp[j] && dict.contains(s.substring(j, i))) {
-//                 dp[i] = true;
-//                 break;
-//             }
-//     return dp[s.length()];
-// }
+   
     public boolean wordBreak(String s, List<String> wordDict) {
         if (wordDict == null || wordDict.size() < 1) {
             return false;
@@ -31,11 +19,10 @@ class Solution {
             for (int j = 0; j < i; j++) {
                 if (dp[j] && dict.contains(s.substring(j, i))) {
                     dp[i] = true;
-                    break;
+                    break; //no need to check further
                 }
             }
         }
-        System.out.println(Arrays.toString(dp));
         return dp[s.length()];
     }
 }
