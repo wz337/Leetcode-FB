@@ -7,9 +7,9 @@ class Solution {
         for (int num : nums) {
             if (num < min) {
                 min = num;
-            } else if (num > min && num < secondMin) {
+            } else if (num < secondMin) {
                 secondMin = num;
-            } else if (num > min && num > secondMin) {
+            } else if (num > secondMin) {
                 return true;
             }
         }
